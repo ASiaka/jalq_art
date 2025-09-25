@@ -1,0 +1,77 @@
+.accueil {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+}
+.title_content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    /* background-color: rgba(7, 7, 7, 0.1); */
+    color: white;
+    padding: 50px;
+}
+.title {
+    font-weight: 900;
+    font-size: 100px;
+    text-transform: uppercase;
+}
+.subtitle {
+    font-weight: 100;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+.articles {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+.article {
+    width: 250px;
+    height: 100px;
+    /* background-color: white; */
+    background-color: rgba(7, 7, 7, 0.3);
+    color: gainsboro;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 18px;
+}
+.article_titre {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.article_paragraphe {
+    padding: 7px 0;
+}
+.article_suite {
+    text-decoration: none;
+    color: cornflowerblue;
+}
+/* .decouvrir_content {
+    position: absolute;
+    bottom: 25px;
+    left: initial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: gainsboro;
+}
+.decouvrir {
+    font-weight: 100;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.fleche {
+    text-decoration: none;
+    font-size: 25px;
+    color: gainsboro;
+} */
