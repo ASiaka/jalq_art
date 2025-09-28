@@ -1,0 +1,91 @@
+.contact {
+    width: 100%;
+    height: 100vh;
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact_content {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+}
+.contact_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.info_title {
+    font-size: 35px;
+    font-weight: 100;
+}
+.info_reseaux {
+    margin-top: 25px;
+}
+.link_reseau {
+
+}
+.fa-brands {
+
+}
+.fa-square-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+.fa-square-whatsapp {
+    color: #25D366;
+}.fa-telegram {
+    color: #0088CC;
+}
+.contact_form {
+    width: 500px;
+    padding: 15px;
+    padding-left: 35px;
+    border-left: gainsboro solid 1px;
+    /* background-color: #1c2f40;
+    color: gainsboro; */
+    /* color: #1c2f40; */
+    display: flex;;
+    flex-direction: column;
+    gap: 25px;
+}
+.form_title {
+    font-size: 25px;
+    font-weight: 100;
+}
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form_nom, .form_email, .form_tel {
+    width: 100%;
+    height: 35px;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(245, 244, 244);
+}
+.form_message {
+    width: 100%;
+    height: 100px;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(245, 244, 244);
+}
+.form_button {
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-color: #1c2f40;
+    color: gainsboro;
+}

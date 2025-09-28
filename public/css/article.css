@@ -16,8 +16,12 @@
 .article_complet_image {
     width: 45%;
     height: 60%;
-    background-color: #1c2f40;
+    background-color: #105733;
     z-index: 1;
+    /* background-image: url('../img/imgluneetoilee.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
 }
 .article_complet_description_bloc {
     /* width: 25%; */
@@ -40,4 +44,16 @@
 .article_complet_retour {
     text-decoration: none;
     color: cornflowerblue;
+}
+.color_blue {
+    border: solid 3px blue;
+}
+.color_red {
+    border: solid 3px red;
+}
+.color_yellow {
+    border: solid 3px yellow;
+}
+.color_white {
+    border: solid 3px gainsboro;
 }

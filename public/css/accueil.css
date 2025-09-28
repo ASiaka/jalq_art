@@ -4,28 +4,45 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
     box-sizing: border-box;
+    padding-top: 100px;
 }
 .title_content {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    /* background-color: rgba(7, 7, 7, 0.1); */
-    color: white;
-    padding: 50px;
+    /* margin-bottom: 50px; */
+    color: #1c2f40;
+    /* background-color: white;
+    box-shadow: 0px 0px 5px 1px gainsboro;
+    padding: 15px;
+    border-radius: 5px; */
 }
 .title {
-    font-weight: 900;
-    font-size: 100px;
+    font-weight: 100;
+    font-size: 50px;
     text-transform: uppercase;
 }
 .subtitle {
     font-weight: 100;
-    font-size: 35px;
+    font-size: 18px;
     text-transform: uppercase;
+}
+.apropos_content {
+    width: 90%;
+    height: 300px;
+    margin: 25px 0;
+    /* background-color: #1c2f40; */
+    border-radius: 5px;
+    /* border: #1c2f40 1px solid; */
+    /* box-shadow: 0px 0px 5px 1px gray; */
+    background-image: url('../img/imgluneetoilee.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .articles {
     display: flex;
@@ -34,10 +51,10 @@
     align-items: center;
 }
 .article {
-    width: 250px;
-    height: 100px;
-    /* background-color: white; */
+    width: 300px;
+    height: 120px;
     background-color: rgba(7, 7, 7, 0.3);
+    background-color: #1c2f40;
     color: gainsboro;
     padding: 15px;
     border-radius: 5px;
@@ -55,23 +72,3 @@
     text-decoration: none;
     color: cornflowerblue;
 }
-/* .decouvrir_content {
-    position: absolute;
-    bottom: 25px;
-    left: initial;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: gainsboro;
-}
-.decouvrir {
-    font-weight: 100;
-    font-size: 14px;
-    text-transform: uppercase;
-}
-.fleche {
-    text-decoration: none;
-    font-size: 25px;
-    color: gainsboro;
-} */

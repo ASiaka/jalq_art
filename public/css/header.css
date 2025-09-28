@@ -9,25 +9,28 @@
     position: absolute;
     left: 0;
     top: 0;
+    background-color: #1c2f40;
+    box-shadow: 0px 3px 5px -1px gray;
 }
 .nav {
     width: 100%;
     max-width: 1500px;
-    padding: 35px 50px;
+    padding: 15px 70px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 .logo_jalq_art {
-    width: 90px;
+    width: 70px;
     height: auto;
 }
 .lists {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     list-style: none;
+    font-size: 14px;
 }
 .list {
     
@@ -35,19 +38,19 @@
 .link {
     padding: 7px;
     text-decoration: none;
-    font-weight: 300;
-    color: black;
+    font-weight: 200;
+    color: gainsboro;
     transition: 1.5s;
 }
 .link:hover {
     background-color: rgba(165, 42, 42, 0.1);
-    color: white;
+    color: gainsboro;
     border-radius: 5px;
     transition: 1.5s;
 }
 .active {
     background-color: brown;
-    color: white;
+    color: gainsboro;
     border-radius: 5px;
     transition: 1.5s;
 }
