@@ -9,7 +9,7 @@
     color: #1c2f40;
 }
 .realisations_title {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 100;
 }
 .art {
@@ -31,7 +31,7 @@
 .realisation {
     padding: 15px;
     border-radius: 7px;
-    box-shadow: 0 0 5px 1px gainsboro;
+    box-shadow: 0 0 10px -4px gainsboro;
 }
 .realisation_img {
 width: 100%;
@@ -42,6 +42,7 @@ margin-bottom: 15px;
 }
 .realisation_title {
     font-weight: 700;
+    color: brown;
 }
 .realisation_subtitle {
     font-weight: 100;
@@ -50,5 +51,19 @@ margin-bottom: 15px;
     margin: 15px 0;
 }
 .realisation_description {
+    font-weight: 100;
+}
+.realisations_info {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    position: absolute;
+    bottom: 25px;
+    left: initial;
+}
+.realisations_info_title {
+    font-size: 30px;
     font-weight: 100;
 }

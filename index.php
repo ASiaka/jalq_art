@@ -15,9 +15,7 @@ $fichier = "pages/" . $page . ".php";
 if(file_exists($fichier)) {
     require __DIR__ . "/" . $fichier;
 } else {
-    echo "<p>Page introuvable.</p>";
-    var_dump($fichier);
-    var_dump(__DIR__);
+    require  __DIR__ . "/pages/404.php";
 }
 
 // FOOTER

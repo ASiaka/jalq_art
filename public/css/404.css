@@ -1,0 +1,21 @@
+.erreur {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #1c2f40;
+}
+.erreur_title {
+    font-size: 100px;
+    font-weight: 900;
+}
+.erreur_subtitle {
+    font-size: 25px;
+    font-weight: 300;
+    background-color: #1c2f40;
+    color: gainsboro;
+    padding: 15px;
+}
