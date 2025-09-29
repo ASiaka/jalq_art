@@ -8,6 +8,7 @@
     position: relative;
     box-sizing: border-box;
     padding-top: 100px;
+    position: relative;
 }
 .title_content {
     display: flex;
@@ -71,4 +72,18 @@
 .article_suite {
     text-decoration: none;
     color: cornflowerblue;
+}
+.realisations_info {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    position: absolute;
+    bottom: 25px;
+    left: initial;
+}
+.realisations_info_title {
+    font-size: 30px;
+    font-weight: 100;
 }

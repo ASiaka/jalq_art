@@ -1,4 +1,4 @@
-<div class="contact">
+<main class="contact">
     <div class="contact_content">
         <div class="contact_info">
             <p class="info_title">Pour plus d'info</p>
@@ -21,4 +21,4 @@
             </form>
         </div>
     </div>
-</div>
+</main>
