@@ -1,11 +1,14 @@
 <?php
 // On récupère l'article en cours
-$filter_article = array_filter($articles, function($value) {
-    return $value["id"] === (int) $_GET['id'];
-});
-// On retourne les valeurs du tableau en cours
-$article = current(array_values($filter_article));
-// var_dump($article);
+if(isset($_GET['id'])) {
+    $filter_article = array_filter($articles, function($value) {
+        return $value["id"] === (int) $_GET['id'];
+    });
+    // On retourne les valeurs du tableau en cours
+    $article = current(array_values($filter_article));
+} else {
+    echo "<p>Article non trouvé.</p>";
+}
 ?>
 
 <div class="article_complet">

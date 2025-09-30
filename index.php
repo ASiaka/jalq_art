@@ -3,21 +3,29 @@ require 'includes/config.php';
 $stmt = $pdo->query("SELECT * FROM articles ORDER BY date_creation DESC");
 $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// HEADER
-include './includes/header.php';
+require __DIR__ . "/controllers/MainController.php";
 
-// PAGE
-// Page par défaut
-$page = isset($_GET['page']) ? $_GET['page'] : 'accueil';
-// Fichier à inclure
-$fichier = "pages/" . $page . ".php";
-// Vérifie que le fichier existe avant de l'inclure
-if(file_exists($fichier)) {
-    require __DIR__ . "/" . $fichier;
+if(isset($_GET['page'])) {
+    // Page par défaut
+    $currentPage = filter_input(INPUT_GET, 'page', FILTER_DEFAULT);
 } else {
-    require  __DIR__ . "/pages/404.php";
+    $currentPage = 'accueil';
 }
 
-// FOOTER
-include './includes/footer.php';
+// Page par défaut
+// $currentPage = isset($_GET['page']) ? $_GET['page'] : 'accueil';
+
+$controller = new MainController($currentPage, $articles);
+
+if($currentPage === 'accueil') {
+    $controller->accueil();
+} else if($currentPage === 'realisations') {
+    $controller->realisations();
+} else if($currentPage === 'contact') {
+    $controller->contact();
+} else if($currentPage === 'article') {
+    $controller->article();
+} else {
+    $controller->erreur();
+}
 ?>
