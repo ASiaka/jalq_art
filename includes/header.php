@@ -14,7 +14,7 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <img src="../public/img/JalQ_art_blanc.png" alt="Logo JalQ_art" class="logo_jalq_art" />
+            <a href="index.php?page=accueil"><img src="../public/img/JalQ_art_blanc.png" alt="Logo JalQ_art" class="logo_jalq_art" /></a>
             <ul class="lists">
                 <li class="list"><a href="index.php?page=accueil" class="link <?= isset($_GET['page']) && $_GET['page'] === "accueil" ? "active" : "" ?>">Accueil</a></li>
                 <li class="list"><a href="index.php?page=realisations" class="link <?= isset($_GET['page']) && $_GET['page'] === "apropos" ? "active" : "" ?>">Réalisations</a></li>

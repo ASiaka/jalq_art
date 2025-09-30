@@ -47,3 +47,9 @@
     text-decoration: none;
     color: cornflowerblue;
 }
+.article_introuvable {
+    font-size: 20px;
+    padding: 15px;
+    color: gainsboro;
+    background-color: #1c2f40;
+}
