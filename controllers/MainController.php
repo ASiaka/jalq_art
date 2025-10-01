@@ -9,19 +9,19 @@ class MainController {
         $this->articles = $articles;
     }
 
-    public function accueilMethod() {
+    public function accueil() {
         $this->show($this->page, $this->articles);
     }
-    public function realisationsMethod() {
+    public function realisations() {
         $this->show($this->page);
     }
-    public function contactMethod() {
+    public function contact() {
         $this->show($this->page);
     }
-    public function articleMethod() {
+    public function article() {
         $this->show($this->page, $this->articles);
     }
-    public function erreurMethod() {
+    public function erreur() {
         $this->show("404");
     }
 

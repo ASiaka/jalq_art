@@ -6,28 +6,28 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 require __DIR__ . "/controllers/MainController.php";
 
 $page = [
-    'accueil' => 'accueilMethod',
-    'realisations' => 'realisationsMethod',
-    'contact' => 'contactMethod',
-    'article' => 'articleMethod',
+    '/' => 'accueil',
+    '/realisations' => 'realisations',
+    '/contact' => 'contact',
+    '/article' => 'article',
 ];
 
-if(isset($_GET['page'])) {
+if(isset($_GET['_url'])) {
     // Page par défaut
-    $currentPage = filter_input(INPUT_GET, 'page', FILTER_DEFAULT);
+    $currentPage = filter_input(INPUT_GET, '_url', FILTER_DEFAULT);
 } else {
-    $currentPage = 'accueil';
+    $currentPage = '/';
 }
 
 // Page par défaut
 // $currentPage = isset($_GET['page']) ? $_GET['page'] : 'accueil';
 
-$controller = new MainController($currentPage, $articles);
+$controller = new MainController($page[$currentPage], $articles);
 
 if(isset($page[$currentPage])) {
     $methodToCall = $page[$currentPage];
     $controller->$methodToCall();
 } else {
-    $controller->erreurMethod();
+    $controller->erreur();
 }
 ?>
