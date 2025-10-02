@@ -26,8 +26,8 @@ class MainController {
     }
 
     private function show($page, $articles = []) {
-        require_once __DIR__ . "/../includes/header.php";
+        require_once __DIR__ . "/../views/includes/header.php";
         require_once __DIR__ . "/../views/" . $page . ".php";
-        require_once __DIR__ . "/../includes/footer.php";
+        require_once __DIR__ . "/../views/includes/footer.php";
     }
 }
