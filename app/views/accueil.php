@@ -31,7 +31,7 @@
             <article class="article">
                 <h2 class="article_titre"><?= htmlspecialchars($article['titre']) ?></h2>
                 <p class="article_paragraphe"><?= substr(htmlspecialchars($article['contenu']), 0, 70) ?>...</p>
-                <a href="./article&id=<?= $article['id'] ?>"  class="article_suite">Lire la suite</a>
+                <a href="./article/<?= $article['id'] ?>"  class="article_suite">Lire la suite</a>
             </article>
         <?php endforeach; ?>
     </div>

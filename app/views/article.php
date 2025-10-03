@@ -1,9 +1,9 @@
 <?php
 // On récupère l'article en cours
-if(isset($_GET['id'])) {
-    $filter_article = array_filter($articles, function($value) {
-        if($value["id"] === (int) $_GET['id']) {
-            return $value["id"] === (int) $_GET['id'];
+if(isset($id)) {
+    $filter_article = array_filter($articles, function($value) use ($id) {
+        if($value["id"] === (int) $id['id']) {
+            return $value["id"] === (int) $id['id'];
         } else {
             return false;
         }
@@ -23,7 +23,7 @@ if(isset($_GET['id'])) {
                     <p class="article_complet_titre"><?= $article['titre'] ?></p>
                     <p
                         class="article_complet_description"><?= $article['contenu'] ?></p>
-                    <a href="index.php?page=accueil" class="article_complet_retour">Retour</a>
+                    <a href=<?= $baseUri ?> class="article_complet_retour">Retour</a>
                 </div>
 <?php 
     } else {

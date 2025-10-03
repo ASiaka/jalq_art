@@ -14,11 +14,11 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="./"><img src="<?= $baseUri ?>/assets/img/JalQ_art_blanc.png" alt="Logo JalQ_art" class="logo_jalq_art" /></a>
+            <a href=<?= $baseUri ?>><img src="<?= $baseUri ?>/assets/img/JalQ_art_blanc.png" alt="Logo JalQ_art" class="logo_jalq_art" /></a>
             <ul class="lists">
-                <li class="list"><a href="./" class="link <?= empty($_GET) ? "active" : "" ?>">Accueil</a></li>
-                <li class="list"><a href="./realisations" class="link <?= isset($_GET['_url']) && $_GET['_url'] === "/realisations" ? "active" : "" ?>">Réalisations</a></li>
-                <li class="list"><a href="./contact" class="link <?= isset($_GET['_url']) && $_GET['_url'] === "/contact" ? "active" : "" ?>">Contact</a></li>
+                <li class="list"><a href=<?= $baseUri ?> class="link <?= empty($_GET) ? "active" : "" ?>">Accueil</a></li>
+                <li class="list"><a href="<?= $baseUri ?>/realisations" class="link <?= isset($_GET['_url']) && $_GET['_url'] === "/realisations" ? "active" : "" ?>">Réalisations</a></li>
+                <li class="list"><a href="<?= $baseUri ?>/contact" class="link <?= isset($_GET['_url']) && $_GET['_url'] === "/contact" ? "active" : "" ?>">Contact</a></li>
             </ul>
         </nav>
     </header>
