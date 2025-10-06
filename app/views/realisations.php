@@ -1,41 +1,12 @@
-<?php
-$realisations = [
-    [
-        "img" => "JalQL.png",
-        "title" => "JalQ L",
-        "subtitle" => "Fond blanc",
-        "description" => "Représentation des îles de la lune dans un fond blanc, éclairée par la lune."
-    ],
-    [
-        "img" => "JalQCL.png",
-        "title" => "JalQ CL",
-        "subtitle" => "Fond blanc",
-        "description" => "Représentation des îles de la lune dans un fond blanc, éclairée par le croissant de lune."
-    ],
-    [
-        "img" => "JalQLE.png",
-        "title" => "JalQ L/E",
-        "subtitle" => "Fond blanc étoilé",
-        "description" => "Représentation des îles de la lune dans un fond blanc étoilé, éclairée par la lune."
-    ],
-    [
-        "img" => "JalQCLE.png",
-        "title" => "JalQ CL/E",
-        "subtitle" => "Fond blanc étoilé",
-        "description" => "Représentation des îles de la lune dans un fond blanc étoilé, éclairée par le croissant de lune."
-    ],
-];
-?>
-
 <main class="realisations">
     <h3 class="realisations_title">Réalisations JalQ<span class="art">art</span></h3>
     <p class="realisations_subtitle">Vous trouverez ici toutes nos réalisations.</p>
     <div class="realisations_content">
-        <?php foreach ($realisations as $realisation) : ?>
+        <?php foreach ($arrayInfos as $realisation) : ?>
             <div class="realisation">
                 <div class="realisation_img"></div>
-                <p class="realisation_title"><?= $realisation["title"] ?></p>
-                <p class="realisation_subtitle"><?= $realisation["subtitle"] ?></p>
+                <p class="realisation_title"><?= $realisation["titre"] ?></p>
+                <p class="realisation_subtitle"><?= $realisation["sous_titre"] ?></p>
                 <p class="realisation_description"><?= $realisation["description"] ?></p>
             </div>
         <?php endforeach; ?>

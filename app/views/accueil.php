@@ -27,7 +27,7 @@
         </p>
     </div>
     <div class="articles">
-        <?php foreach ($ÎlesInfos as $île): ?>
+        <?php foreach ($arrayInfos as $île): ?>
             <article class="article">
                 <h2 class="article_titre"><?= htmlspecialchars($île['titre']) ?></h2>
                 <p class="article_paragraphe"><?= substr(htmlspecialchars($île['contenu']), 0, 70) ?>...</p>

@@ -1,37 +1,28 @@
 <?php
+class MainController extends CoreController {
+    
+    public function accueil($arrayMatch) {
+        $instanceÎlesInfos = new ÎlesInfos();
+        $ÎlesInfos = $instanceÎlesInfos->findAll();
 
-class MainController {
-    public $page;
-    public $ÎlesInfos;
-    public $id;
+        $this->show($arrayMatch['name'], $ÎlesInfos);
+    }
+    public function realisations($arrayMatch) {
+        $instanceJalQart = new JalQart();
+        $JalQart = $instanceJalQart->findAll();
 
-    public function __construct($page, $ÎlesInfos = [], $id = null) {
-        $this->page = $page;
-        $this->ÎlesInfos = $ÎlesInfos;
-        $this->id = $id;
+        $this->show($arrayMatch['name'], $JalQart);
     }
+    public function contact($arrayMatch) {
+        $this->show($arrayMatch['name']);
+    }
+    public function article($arrayMatch) {
+        $instanceÎlesInfos = new ÎlesInfos();
+        $ÎlesInfos = $instanceÎlesInfos->findAll();
 
-    public function accueil() {
-        $this->show($this->page, $this->ÎlesInfos);
-    }
-    public function realisations() {
-        $this->show($this->page);
-    }
-    public function contact() {
-        $this->show($this->page);
-    }
-    public function article() {
-        $this->show($this->page, $this->ÎlesInfos, $this->id);
+        $this->show($arrayMatch['name'], $ÎlesInfos, $arrayMatch['params']['id']);
     }
     public function erreur() {
         $this->show("404");
-    }
-
-    private function show($page, $ÎlesInfos = [], $id = null) {
-        $baseUri = $_SERVER['BASE_URI'];
-        
-        require_once __DIR__ . "/../views/includes/header.php";
-        require_once __DIR__ . "/../views/" . $page . ".php";
-        require_once __DIR__ . "/../views/includes/footer.php";
     }
 }

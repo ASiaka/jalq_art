@@ -10,7 +10,7 @@ class JalQart {
 
     function findAll() {
         $databaseConnection = DataBase::getPDO();
-        $sql = 'SELECT * FROM `JalQart`';
+        $sql = 'SELECT * FROM `JalQart` ORDER BY `id` ASC';
         $pdoStatement = $databaseConnection->query($sql);
         $JalQart = $pdoStatement->fetchAll(PDO::FETCH_ASSOC);
         return $JalQart;

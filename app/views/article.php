@@ -1,9 +1,9 @@
 <?php
 // On récupère l'article en cours
 if(isset($id)) {
-    $filter_articles = array_filter($ÎlesInfos, function($value) use ($id) {
-        if($value["id"] === (int) $id['id']) {
-            return $value["id"] === (int) $id['id'];
+    $filter_îles = array_filter($arrayInfos, function($value) use ($id) {
+        if($value["id"] === (int) $id) {
+            return $value["id"] === (int) $id;
         } else {
             return false;
         }
@@ -12,9 +12,9 @@ if(isset($id)) {
         <div class="article_complet">
             <article class="article_complet_bloc">
 <?php
-    if(!empty($filter_articles)) {
+    if(!empty($filter_îles)) {
         // On retourne les valeurs du tableau en cours
-        $île = current(array_values($filter_articles));
+        $île = current(array_values($filter_îles));
 ?>
                 <div class="article_complet_image">
         
