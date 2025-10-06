@@ -27,11 +27,11 @@
         </p>
     </div>
     <div class="articles">
-        <?php foreach ($articles as $article): ?>
+        <?php foreach ($ÎlesInfos as $île): ?>
             <article class="article">
-                <h2 class="article_titre"><?= htmlspecialchars($article['titre']) ?></h2>
-                <p class="article_paragraphe"><?= substr(htmlspecialchars($article['contenu']), 0, 70) ?>...</p>
-                <a href="./article/<?= $article['id'] ?>"  class="article_suite">Lire la suite</a>
+                <h2 class="article_titre"><?= htmlspecialchars($île['titre']) ?></h2>
+                <p class="article_paragraphe"><?= substr(htmlspecialchars($île['contenu']), 0, 70) ?>...</p>
+                <a href="./article/<?= $île['id'] ?>"  class="article_suite">Lire la suite</a>
             </article>
         <?php endforeach; ?>
     </div>
