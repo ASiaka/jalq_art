@@ -1,5 +1,6 @@
 <?php
 
+namespace JalQart\Models;
 use JalQart\Utils\Database;
 
 class JalQart {
@@ -12,7 +13,7 @@ class JalQart {
         $databaseConnection = DataBase::getPDO();
         $sql = 'SELECT * FROM `JalQart` ORDER BY `id` ASC';
         $pdoStatement = $databaseConnection->query($sql);
-        $JalQart = $pdoStatement->fetchAll(PDO::FETCH_ASSOC);
+        $JalQart = $pdoStatement->fetchAll(\PDO::FETCH_ASSOC);
         return $JalQart;
     }
 }

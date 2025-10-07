@@ -1,11 +1,16 @@
 <?php
+
+namespace JalQart\Controllers;
+use JalQart\Models\IlesInfos;
+use JalQart\Models\JalQart;
+
 class MainController extends CoreController {
     
     public function accueil($arrayMatch) {
-        $instanceÎlesInfos = new ÎlesInfos();
-        $ÎlesInfos = $instanceÎlesInfos->findAll();
+        $instanceIlesInfos = new IlesInfos();
+        $IlesInfos = $instanceIlesInfos->findAll();
 
-        $this->show($arrayMatch['name'], $ÎlesInfos);
+        $this->show($arrayMatch['name'], $IlesInfos);
     }
     public function realisations($arrayMatch) {
         $instanceJalQart = new JalQart();
@@ -17,10 +22,10 @@ class MainController extends CoreController {
         $this->show($arrayMatch['name']);
     }
     public function article($arrayMatch) {
-        $instanceÎlesInfos = new ÎlesInfos();
-        $ÎlesInfos = $instanceÎlesInfos->findAll();
+        $instanceIlesInfos = new IlesInfos();
+        $IlesInfos = $instanceIlesInfos->findAll();
 
-        $this->show($arrayMatch['name'], $ÎlesInfos, $arrayMatch['params']['id']);
+        $this->show($arrayMatch['name'], $IlesInfos, $arrayMatch['params']['id']);
     }
     public function erreur() {
         $this->show("404");

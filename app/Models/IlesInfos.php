@@ -1,8 +1,9 @@
 <?php
 
+namespace JalQart\Models;
 use JalQart\Utils\Database;
 
-class ÎlesInfos {
+class IlesInfos {
     private $id;
     private $titre;
     private $contenu;
@@ -11,9 +12,9 @@ class ÎlesInfos {
 
     function findAll() {
         $databaseConnection = DataBase::getPDO();
-        $sql = 'SELECT * FROM `ÎlesInfos` ORDER BY `date_creation` DESC';
+        $sql = 'SELECT * FROM `IlesInfos` ORDER BY `date_creation` DESC';
         $pdoStatement = $databaseConnection->query($sql);
-        $ÎlesInfos = $pdoStatement->fetchAll(PDO::FETCH_ASSOC);
-        return $ÎlesInfos;
+        $IlesInfos = $pdoStatement->fetchAll(\PDO::FETCH_ASSOC);
+        return $IlesInfos;
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+namespace JalQart\Controllers;
+
 class CoreController {
     protected function show($page, $arrayInfos = [], $id = null) {
         $baseUri = $_SERVER['BASE_URI'];
