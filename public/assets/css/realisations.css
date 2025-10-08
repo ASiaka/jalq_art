@@ -39,6 +39,10 @@ height: 150px;
 background-color: #1c2f40;
 border-radius: 7px;
 margin-bottom: 15px;
+background-image: url('../img/T_1.1.jpg');
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
 }
 .realisation_title {
     font-weight: 700;

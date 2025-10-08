@@ -12,8 +12,8 @@ body {
   background-color: white;
   /* background-color: #105733d5; */
   /* background-color: #105733; */
-  /* background-image: url('./public/img/jalqTransp.png');
-  background-repeat: no-repeat;
+  /* background-image: url('../img/jalqTransp.png');
+  background-repeat: repeat;
   background-size: 50%;
   background-position: center; */
 }

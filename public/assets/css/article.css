@@ -23,6 +23,30 @@
     background-color: white;
     z-index: 1;
 }
+.Ngazidja {
+    background-image: url('../img/ile-ngazidja.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-size: contain; */
+}
+.Anjouan {
+    background-image: url('../img/ile-anjouan.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-size: contain; */
+}
+.Mohéli {
+    background-image: url('../img/ile-moheli.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-size: contain; */
+}
+.Mayotte {
+    background-image: url('../img/ile-mayotte.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-size: contain; */
+}
 .article_complet_description_bloc {
     /* width: 25%; */
     max-width: 45%;

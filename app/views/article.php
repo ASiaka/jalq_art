@@ -16,7 +16,7 @@ if(isset($id)) {
         // On retourne les valeurs du tableau en cours
         $île = current(array_values($filter_îles));
 ?>
-                <div class="article_complet_image">
+                <div class="article_complet_image <?= $île['titre'] ?>">
         
                 </div>
                 <div class="article_complet_description_bloc">
