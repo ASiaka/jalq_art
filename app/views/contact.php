@@ -4,9 +4,9 @@
             <p class="info_title">Pour plus d'info</p>
             <p class="info_title">Contactez nous via :</p>
             <div class="info_reseaux">
-                <a href="#" class="link_reseau"><i class="fa-brands fa-square-instagram fa-3x"></i></a>
-                <a href="#" class="link_reseau"><i class="fa-brands fa-square-whatsapp fa-3x"></i></a>
-                <a href="#" class="link_reseau"><i class="fa-brands fa-telegram fa-3x"></i></a>
+                <a href="#" class="link_reseau"><i class="fa-brands fa-square-instagram fa-2x"></i></a>
+                <a href="#" class="link_reseau"><i class="fa-brands fa-square-whatsapp fa-2x"></i></a>
+                <a href="#" class="link_reseau"><i class="fa-brands fa-telegram fa-2x"></i></a>
             </div>
         </div>
         <div class="contact_form">

@@ -12,7 +12,7 @@ class IlesInfos {
 
     function findAll() {
         $databaseConnection = DataBase::getPDO();
-        $sql = 'SELECT * FROM `ilesinfos` ORDER BY `date_creation` DESC';
+        $sql = 'SELECT `id`, `titre`, `contenu` FROM `ilesinfos` ORDER BY `date_creation` DESC';
         $pdoStatement = $databaseConnection->query($sql);
         $IlesInfos = $pdoStatement->fetchAll(\PDO::FETCH_ASSOC);
         return $IlesInfos;
