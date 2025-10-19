@@ -23,6 +23,7 @@
 }
 .apropos_description_bloc {
     padding: 25px;
+    background-color: #1c2f40;
     color: white;
 }
 .apropos_title {
@@ -55,10 +56,8 @@
     text-align: center;
     margin: 25px 0;
     padding: 25px;
-    /* background-color: #1c2f40; */
     background-color: rgb(245, 244, 244);
     color: #1c2f40;
-    /* border: #1c2f40 1px solid; */
     border-radius: 5px;
     margin-top: auto;
 }
@@ -88,6 +87,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: auto;
+    padding: 0 25px;
 }
 .article {
     width: 300px;

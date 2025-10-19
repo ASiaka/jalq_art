@@ -7,14 +7,12 @@ use JalQart\Models\JalQart;
 class MainController extends CoreController {
     
     public function accueil($arrayMatch) {
-        $instanceIlesInfos = new IlesInfos();
-        $IlesInfos = $instanceIlesInfos->findAll();
+        $IlesInfos =IlesInfos::findAll();
 
         $this->show($arrayMatch['name'], $IlesInfos);
     }
     public function realisations($arrayMatch) {
-        $instanceJalQart = new JalQart();
-        $JalQart = $instanceJalQart->findAll();
+        $JalQart = JalQart::findAll();
 
         $this->show($arrayMatch['name'], $JalQart);
     }
@@ -22,8 +20,7 @@ class MainController extends CoreController {
         $this->show($arrayMatch['name']);
     }
     public function article($arrayMatch) {
-        $instanceIlesInfos = new IlesInfos();
-        $IlesInfos = $instanceIlesInfos->findAll();
+        $IlesInfos = IlesInfos::findAll();
 
         $this->show($arrayMatch['name'], $IlesInfos, $arrayMatch['params']['id']);
     }

@@ -2,7 +2,7 @@
 
 namespace JalQart\Controllers;
 
-class CoreController {
+abstract class CoreController {
     protected function show($page, $arrayInfos = [], $id = null) {
         $baseUri = $_SERVER['BASE_URI'];
         
