@@ -1,0 +1,80 @@
+.admin-nav {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.nav-lists {
+    display: flex;
+    gap: 15px;
+}
+.nav-list {
+}
+.nav-link {
+    display: inline-block;
+    text-decoration: none;
+    width: 150px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: brown;
+    color: gainsboro;
+    border-radius: 5px;
+}
+.content {
+    margin: auto;
+}
+.login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
+    background-color: gainsboro;
+    color: brown;
+}
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
+    background-color: gainsboro;
+    color: brown;
+}
+.update {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
+    background-color: gainsboro;
+    color: brown;
+}
+.add {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
+    background-color: gainsboro;
+    color: brown;
+}
+.delete {
+   width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
+    background-color: gainsboro;
+    color: brown; 
+}

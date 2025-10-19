@@ -10,7 +10,8 @@ $router->map(
     'GET',
     '/',
     [
-        '/' => 'accueil',
+      // 'method' => 'accueil',
+      'controller' => 'JalQart\Controllers\Front\MainController',
     ],
     'accueil'
 );
@@ -19,7 +20,8 @@ $router->addRoutes(array(
     'GET',
     '/realisations',
     [
-        '/realisations' => 'realisations',
+      // 'method' => 'realisations',
+      'controller' => 'JalQart\Controllers\Front\MainController',
     ],
     'realisations'
   ),
@@ -27,7 +29,8 @@ $router->addRoutes(array(
     'GET',
     '/contact',
     [
-        '/contact' => 'contact',
+      // 'method' => 'contact',
+      'controller' => 'JalQart\Controllers\Front\MainController',
     ],
     'contact'
   ),
@@ -35,20 +38,73 @@ $router->addRoutes(array(
     'GET',
     '/article/[i:id]',
     [
-        '/article' => 'article',
+      // 'method' => 'article',
+      'controller' => 'JalQart\Controllers\Front\MainController',
     ],
     'article'
+  ),
+
+  //ROUTES ADMIN
+  array(
+    'GET',
+    '/admin/login',
+    [
+      // 'method' => 'login',
+      'controller' => 'JalQart\Controllers\Admin\AdminController',
+    ],
+    'login'
+  ),
+  array(
+    'GET',
+    '/admin/dashboard',
+    [
+      // 'method' => 'dashboard',
+      'controller' => 'JalQart\Controllers\Admin\AdminController',
+    ],
+    'dashboard'
+  ),
+  array(
+    'GET',
+    '/admin/update',
+    [
+      // 'method' => 'update',
+      'controller' => 'JalQart\Controllers\Admin\AdminController',
+    ],
+    'update'
+  ),
+  array(
+    'GET',
+    '/admin/add',
+    [
+      // 'method' => 'add',
+      'controller' => 'JalQart\Controllers\Admin\AdminController',
+    ],
+    'add'
+  ),
+  array(
+    'GET',
+    '/admin/delete',
+    [
+      // 'method' => 'delete',
+      'controller' => 'JalQart\Controllers\Admin\AdminController',
+    ],
+    'delete'
   ),
 ));
 
 $match = $router->match();
 
-$controller = new JalQart\Controllers\MainController();
+if( $match === false )
+  {
+    $erreurController = new JalQart\Controllers\Front\MainController('erreur');
+    $erreurController->erreur();
+    exit;
+  }
 
-if($match) {
-    $methodToCall = $match['name'];
-    $controller->$methodToCall($match);
-} else {
-    $controller = new JalQart\Controllers\MainController('erreur');
-    $controller->erreur();
-}
+$controllerToInstantiate = $match['target']['controller'];
+
+$controller = new $controllerToInstantiate();
+
+$methodToCall = $match['name'];
+
+$controller->$methodToCall($match);

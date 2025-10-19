@@ -1,6 +1,6 @@
 <?php
 
-namespace JalQart\Controllers;
+namespace JalQart\Controllers\Front;
 use JalQart\Models\IlesInfos;
 use JalQart\Models\JalQart;
 
