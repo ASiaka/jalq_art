@@ -56,7 +56,7 @@ $router->addRoutes(array(
   ),
   array(
     'GET',
-    '/admin/dashboard',
+    '/admin',
     [
       // 'method' => 'dashboard',
       'controller' => 'JalQart\Controllers\Admin\AdminController',

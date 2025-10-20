@@ -1,0 +1,47 @@
+.admin-nav {
+   width: 200px;
+   height: 70vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   padding: 25px;
+}
+.admin-title {
+    font-weight: 700;
+    padding: 7px;
+    margin-bottom: 50px;
+    background-color: cadetblue;
+    color: gainsboro;
+}
+.nav-lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+}
+.nav-list {
+}
+.nav-link {
+    display: inline-block;
+    text-decoration: none;
+    /* width: 150px; */
+    text-align: start;
+    padding: 10px 0;
+    color: cadetblue;
+    /* border-radius: 5px; */
+}
+.logout-link {
+    display: inline-block;
+    text-decoration: none;
+    text-align: start;
+    margin-top: auto;
+    padding-top: 25px;
+    color: cadetblue;
+    transition: 1.5s;
+}
+.active-link {
+    color: brown;
+    transition: 1.5s;
+}

@@ -1,0 +1,55 @@
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    background-color: gainsboro;
+}
+.admin-list-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: gainsboro;
+    margin-bottom: 25px;
+}
+.admin-realisations {
+    width: 80%;
+    display: flex;
+    color: brown;
+    padding: 10px;
+    font-weight: 700;
+    border-bottom: 2px brown solid;
+}
+.admin-realisations-id {
+    width: 80px;
+}
+.admin-realisations-title {
+
+}
+.admin-realisations-content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.admin-realisation-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: gainsboro;
+    padding: 10px;
+    border-bottom: 1px gainsboro solid;
+}
+.admin-realisation-id {
+    width: 80px;
+}
+.admin-realisation-title {
+    padding-right: 80px;
+    margin-right: auto;
+}
+.admin-realisation-link {
+    text-decoration: none;
+    color: gainsboro;
+}

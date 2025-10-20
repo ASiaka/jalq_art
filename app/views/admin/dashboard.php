@@ -2,5 +2,34 @@
     <?php 
         require_once __DIR__ . "/includes/nav.php";
     ?>
-    <p class="content">DASHBOARD</p>
+    <div class="content">
+        <p class="admin-list-title">List des réalisations</p>
+        <div class="admin-realisations">
+            <p class="admin-realisations-id">ID</p>
+            <p class="admin-realisations-title">TITLE</p>
+        </div>
+        <div class="admin-realisations-content">
+            <div class="admin-realisation-content">
+                <p class="admin-realisation-id">1</p>
+                <p class="admin-realisation-title">JalQart L</p>
+                <a href="#" class="admin-realisation-link"><i class="fa-solid fa-square-pen fa-2x"></i></a>
+                <a href="#" class="admin-realisation-link"><i class="fa-solid fa-square-plus fa-2x"></i></a>
+                <a href="#" class="admin-realisation-link"><i class="fa-solid fa-square-minus fa-2x"></i></a>
+            </div>
+            <div class="admin-realisation-content">
+                <p class="admin-realisation-id">2</p>
+                <p class="admin-realisation-title">JalQart CL</p>
+                <a href="#" class="admin-realisation-link"><i class="fa-solid fa-square-pen fa-2x"></i></a>
+                <a href="#" class="admin-realisation-link"><i class="fa-solid fa-square-plus fa-2x"></i></a>
+                <a href="#" class="admin-realisation-link"><i class="fa-solid fa-square-minus fa-2x"></i></a>
+            </div>
+            <div class="admin-realisation-content">
+                <p class="admin-realisation-id">3</p>
+                <p class="admin-realisation-title">JalQart CL/E</p>
+                <a href="#" class="admin-realisation-link"><i class="fa-solid fa-square-pen fa-2x"></i></a>
+                <a href="#" class="admin-realisation-link"><i class="fa-solid fa-square-plus fa-2x"></i></a>
+                <a href="#" class="admin-realisation-link"><i class="fa-solid fa-square-minus fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
 </main>
