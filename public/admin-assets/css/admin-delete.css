@@ -1,0 +1,44 @@
+.delete {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    background-color: gainsboro;
+}
+.admin-delete-buttons {
+    margin-top: 50px;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+.admin-delete-annuler {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    color: #1c2f40;
+    background-color: gainsboro;
+    cursor: pointer;
+}
+.admin-delete-confirmer {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    color: gainsboro;
+    background-color: brown;
+    cursor: pointer;
+}
+.admin-checkboxAll {
+    width: 15px;
+    height: 15px;
+    accent-color: brown;
+}
+.admin-checkbox {
+    width: 15px;
+    height: 15px;
+    accent-color: #1c2f40;
+}

@@ -26,8 +26,8 @@
             </a>
         </li>
     </ul>
-    <a href="#" class="logout-link">
+    <button class="logout-button">
         <i class="fa-solid fa-right-from-bracket"></i>
         Log out
-    </a>
+    </button>
 </nav>

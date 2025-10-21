@@ -10,7 +10,7 @@ $router->map(
     'GET',
     '/',
     [
-      // 'method' => 'accueil',
+      'method' => 'accueil',
       'controller' => 'JalQart\Controllers\Front\MainController',
     ],
     'accueil'
@@ -20,7 +20,7 @@ $router->addRoutes(array(
     'GET',
     '/realisations',
     [
-      // 'method' => 'realisations',
+      'method' => 'realisations',
       'controller' => 'JalQart\Controllers\Front\MainController',
     ],
     'realisations'
@@ -29,7 +29,7 @@ $router->addRoutes(array(
     'GET',
     '/contact',
     [
-      // 'method' => 'contact',
+      'method' => 'contact',
       'controller' => 'JalQart\Controllers\Front\MainController',
     ],
     'contact'
@@ -38,7 +38,7 @@ $router->addRoutes(array(
     'GET',
     '/article/[i:id]',
     [
-      // 'method' => 'article',
+      'method' => 'article',
       'controller' => 'JalQart\Controllers\Front\MainController',
     ],
     'article'
@@ -49,7 +49,7 @@ $router->addRoutes(array(
     'GET',
     '/admin/login',
     [
-      // 'method' => 'login',
+      'method' => 'login',
       'controller' => 'JalQart\Controllers\Admin\AdminController',
     ],
     'login'
@@ -58,7 +58,7 @@ $router->addRoutes(array(
     'GET',
     '/admin',
     [
-      // 'method' => 'dashboard',
+      'method' => 'dashboard',
       'controller' => 'JalQart\Controllers\Admin\AdminController',
     ],
     'dashboard'
@@ -67,28 +67,55 @@ $router->addRoutes(array(
     'GET',
     '/admin/update',
     [
-      // 'method' => 'update',
+      'method' => 'update',
       'controller' => 'JalQart\Controllers\Admin\AdminController',
     ],
     'update'
   ),
   array(
+    'POST',
+    '/admin/update',
+    [
+      'method' => 'update',
+      'controller' => 'JalQart\Controllers\Admin\AdminController',
+    ],
+    'update-post'
+  ),
+  array(
     'GET',
     '/admin/add',
     [
-      // 'method' => 'add',
+      'method' => 'add',
       'controller' => 'JalQart\Controllers\Admin\AdminController',
     ],
     'add'
   ),
   array(
+    'POST',
+    '/admin/add',
+    [
+      'method' => 'add',
+      'controller' => 'JalQart\Controllers\Admin\AdminController',
+    ],
+    'add-post'
+  ),
+  array(
     'GET',
     '/admin/delete',
     [
-      // 'method' => 'delete',
+      'method' => 'delete',
       'controller' => 'JalQart\Controllers\Admin\AdminController',
     ],
     'delete'
+  ),
+  array(
+    'POST',
+    '/admin/delete',
+    [
+      'method' => 'delete',
+      'controller' => 'JalQart\Controllers\Admin\AdminController',
+    ],
+    'delete-post'
   ),
 ));
 
@@ -105,6 +132,7 @@ $controllerToInstantiate = $match['target']['controller'];
 
 $controller = new $controllerToInstantiate();
 
-$methodToCall = $match['name'];
+$methodToCall = $match['target']['method'];
+// $methodToCall = $match['name'];
 
 $controller->$methodToCall($match);

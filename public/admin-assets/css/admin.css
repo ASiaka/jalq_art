@@ -1,5 +1,9 @@
-@import url("./dashboard.css");
+@import url("./admin-login.css");
 @import url("./admin-nav.css");
+@import url("./admin-dashboard.css");
+@import url("./admin-update.css");
+@import url("./admin-add.css");
+@import url("./admin-delete.css");
 
 .content {
     width: 60%;
@@ -12,44 +16,9 @@
     justify-content: flex-start;
     align-items: center;
 }
-.login {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 100px;
-    background-color: gainsboro;
-    color: brown;
-}
-.update {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 70px;
-    background-color: gainsboro;
-    color: brown;
-}
-.add {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 70px;
-    background-color: gainsboro;
-    color: brown;
-}
-.delete {
-   width: 100%;
-   min-height: 100vh;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding-top: 70px;
-   background-color: gainsboro;
-   color: brown;
+.admin-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: gainsboro;
+    margin-bottom: 45px;
 }

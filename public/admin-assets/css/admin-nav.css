@@ -32,14 +32,18 @@
     color: cadetblue;
     /* border-radius: 5px; */
 }
-.logout-link {
+.logout-button {
     display: inline-block;
     text-decoration: none;
     text-align: start;
     margin-top: auto;
-    padding-top: 25px;
+    border: none;
+    background-color: gainsboro;
     color: cadetblue;
     transition: 1.5s;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
 }
 .active-link {
     color: brown;
