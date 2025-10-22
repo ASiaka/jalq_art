@@ -8,7 +8,7 @@
             </a>
         </li>
         <li class="nav-list">
-            <a href="<?= $baseUri ?>/admin/update" class="nav-link <?= isset($_GET['_url']) && $_GET['_url'] === "/admin/update" ? "active-link" : "" ?>">
+            <a href="<?= $baseUri ?>/admin/update/1" class="nav-link <?= isset($_GET['_url']) && $_GET['_url'] === "/admin/update" ? "active-link" : "" ?>">
                 <i class="fa-solid fa-square-pen fa-2x"></i>
                 Update
             </a>

@@ -65,7 +65,7 @@ $router->addRoutes(array(
   ),
   array(
     'GET',
-    '/admin/update',
+    '/admin/update/[i:id]',
     [
       'method' => 'update',
       'controller' => 'JalQart\Controllers\Admin\AdminController',
@@ -74,7 +74,7 @@ $router->addRoutes(array(
   ),
   array(
     'POST',
-    '/admin/update',
+    '/admin/update/[i:id]',
     [
       'method' => 'update',
       'controller' => 'JalQart\Controllers\Admin\AdminController',

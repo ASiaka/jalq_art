@@ -10,10 +10,14 @@ class AdminController {
         $this->show($arrayMatch['target']['method']);
     }
     public function dashboard($arrayMatch) {
-        $this->show($arrayMatch['target']['method']);
+        $arrayInfos = JalQart::findAll();
+        
+        $this->show($arrayMatch['target']['method'], $arrayInfos);
     }
     public function update($arrayMatch) {
-        $this->show($arrayMatch['target']['method']);
+        $arrayInfos = JalQart::findAll();
+
+        $this->show($arrayMatch['target']['method'], $arrayInfos, $arrayMatch['params']['id']);
     }
     public function add($arrayMatch) {
         $this->show($arrayMatch['target']['method']);
@@ -25,7 +29,8 @@ class AdminController {
     //     $this->show("404");
     // }
 
-    protected function show($page) {
+    private function show($page, $arrayInfos = [], $id = null) {
+        global $router;
         $baseUri = $_SERVER['BASE_URI'];
 
         require_once __DIR__ . "/../../views/front/includes/header.php";

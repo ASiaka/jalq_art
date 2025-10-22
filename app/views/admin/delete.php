@@ -26,7 +26,7 @@
                 <input type="checkbox" id="three" name="three" value="3" class="admin-checkbox">
             </div>
             <div class="admin-delete-buttons">
-                <button type="button" class="admin-delete-annuler">Annuler</button>
+                <button type="reset" class="admin-delete-annuler">Annuler</button>
                 <button type="submit" class="admin-delete-confirmer">Confirmer</button>
             </div>
         </form>

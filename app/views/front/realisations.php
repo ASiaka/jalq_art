@@ -6,19 +6,19 @@
             <div class="realisation">
                 <div class="realisation_img
                         <?=
-                            $realisation["titre"] === "JalQ L" ? "JalQL" : (
-                                $realisation["titre"] === "JalQ CL" ? "JalQCL" : (
-                                    $realisation["titre"] === "JalQ L/E" ? "JalQLE" : (
-                                        $realisation["titre"] === "JalQ CL/E" ? "JalQCLE" : ""
+                            $realisation->titre === "JalQ L" ? "JalQL" : (
+                                $realisation->titre === "JalQ CL" ? "JalQCL" : (
+                                    $realisation->titre === "JalQ L/E" ? "JalQLE" : (
+                                        $realisation->titre === "JalQ CL/E" ? "JalQCLE" : ""
                                     )
                                 )
                             );
                             
                         ?>
                     "></div>
-                <p class="realisation_title"><?= $realisation["titre"] ?></p>
-                <p class="realisation_subtitle"><?= $realisation["sous_titre"] ?></p>
-                <p class="realisation_description"><?= $realisation["description"] ?></p>
+                <p class="realisation_title"><?= $realisation->titre ?></p>
+                <p class="realisation_subtitle"><?= $realisation->sous_titre ?></p>
+                <p class="realisation_description"><?= $realisation->description ?></p>
             </div>
         <?php endforeach; ?>
     </div>

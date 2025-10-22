@@ -5,10 +5,10 @@ use JalQart\Models\CoreModel;
 use JalQart\Utils\Database;
 
 class JalQart extends CoreModel {
-    private $id;
-    private $titre;
-    private $sous_titre;
-    private $description;
+    public $id;
+    public $titre;
+    public $sous_titre;
+    public $description;
 
     public static function find($id) {
         $databaseConnection = DataBase::getPDO();
@@ -23,10 +23,10 @@ class JalQart extends CoreModel {
 
     public static function findAll() {
         $databaseConnection = DataBase::getPDO();
-        $sql = 'SELECT * FROM `jalqart` ORDER BY `id` DESC';
+        $sql = 'SELECT * FROM `jalqart` ORDER BY `id` ASC';
         $pdoStatement = $databaseConnection->query($sql);
-        $JalQart = $pdoStatement->fetchAll(\PDO::FETCH_ASSOC);
-        return $JalQart;
+        $result = $pdoStatement->fetchAll(\PDO::FETCH_CLASS, static::class);
+        return $result;
     }
 
     public static function insert() {
