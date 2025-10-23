@@ -32,11 +32,6 @@
     background-color: brown;
     cursor: pointer;
 }
-.admin-checkboxAll {
-    width: 15px;
-    height: 15px;
-    accent-color: brown;
-}
 .admin-checkbox {
     width: 15px;
     height: 15px;

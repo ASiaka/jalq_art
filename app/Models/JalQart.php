@@ -29,18 +29,18 @@ class JalQart extends CoreModel {
         return $result;
     }
 
-    public static function insert() {
+    public function insert() {
         $databaseConnection = DataBase::getPDO();
         $sql = 'INSERT INTO `jalqart` (`titre`, `sous_titre`, `description`) VALUES (:titre, :sous_titre, :description)';
         $pdoStatement = $databaseConnection->prepare($sql);
         $pdoStatement->execute([
-            ':titre' => 'test',
-            ':sous_titre' => 'le test',
-            ':description' => 'test description',
+            ':titre' => $this->titre,
+            ':sous_titre' => $this->sous_titre,
+            ':description' => $this->description,
         ]);
     }
 
-    public static function update() {
+    public function update() {
         $databaseConnection = DataBase::getPDO();
         $sql = 'UPDATE `jalqart` SET titre = :titre, sous_titre = :sous_titre, description = :description WHERE id = :id';
         $pdoStatement = $databaseConnection->prepare($sql);
@@ -52,7 +52,7 @@ class JalQart extends CoreModel {
         ]);
     }
     
-    public static function delete($id) {
+    public function delete($id) {
         $databaseConnection = DataBase::getPDO();
         $sql = 'DELETE FROM `jalqart` WHERE id = :id';
         $pdoStatement = $databaseConnection->prepare($sql);

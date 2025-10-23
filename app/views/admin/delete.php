@@ -7,7 +7,6 @@
         <div class="admin-realisations">
             <p class="admin-realisations-id">ID</p>
             <p class="admin-realisations-title">TITLE</p>
-            <input type="checkbox" id="selectAll" name="selectAll" value="All" class="admin-checkboxAll">
         </div>
         <form action="" method="POST" class="admin-realisations-content">
             <div class="admin-realisation-content">
