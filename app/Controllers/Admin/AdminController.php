@@ -15,6 +15,11 @@ class AdminController {
         $this->show($arrayMatch['target']['method'], $arrayInfos);
     }
     public function update($arrayMatch) {
+        $arrayInfos = JalQart::findAll();
+        
+        $this->show($arrayMatch['target']['method'], $arrayInfos);
+    }
+    public function updateId($arrayMatch) {
         // Nécessaire pour lire le token CSRF
         session_start();
 
@@ -174,7 +179,7 @@ class AdminController {
                 unset($_SESSION['csrf_token']);
 
                 $JalQartUpdate = new JalQart();
-                
+
                 foreach($Ids as $id) {
                     $JalQartUpdate->delete((int)$id);
                 }

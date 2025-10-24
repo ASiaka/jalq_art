@@ -1,60 +1,22 @@
-<main class="update">
+<main class="dashboard">
     <?php 
         require_once __DIR__ . "/includes/nav.php";
-
-        // Génération du token
-        if (empty($_SESSION['csrf_token'])) {
-            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-        }
-        
-        extract($arrayInfos);
-
-        // On récupère l'article en cours
-        if(isset($id)) {
-            $filter_JalQart = array_filter($JalQartInfos, function($value) use ($id) {
-                if($value->id === (int) $id) {
-                    return $value->id === (int) $id;
-                } else {
-                    return false;
-                }
-            });
-        }
-        if(!empty($filter_JalQart)) {
-            // On retourne les valeurs du tableau en cours
-            $JalQart = current(array_values($filter_JalQart));
-        }
     ?>
     <div class="content">
         <p class="admin-title">Mise à jour</p>
-        <form action="<?= $router->generate('update-post', ['id' => $JalQart->id]) ?>" method="POST" class="admin-update-content">
-            <p class="admin-update-id">ID : <span class="admin-update-id-span"><?= $JalQart->id ?></span></p>
-            <!-- Champ caché -->
-            <input type="hidden" name="id" value="<?= $JalQart->id ?>">
+        <div class="admin-realisations">
+            <p class="admin-realisations-id">ID</p>
+            <p class="admin-realisations-title">TITLE</p>
+        </div>
+        <div class="admin-realisations-content">
+            <?php foreach($arrayInfos as $infos) : ?>
+            
+                <div class="admin-realisation-content">
+                    <p class="admin-realisation-id"><?= $infos->id ?></p>
+                    <p class="admin-realisation-title"><?= $infos->titre ?></p>
+                    <a href="<?= $router->generate('updateId', ['id' => $infos->id]) ?>" class="admin-realisation-link"><i class="fa-solid fa-square-pen fa-2x"></i></a>
+                </div>
 
-            <label class="admin-update-label">
-                Titre
-                <input type="text" name="titre" value="<?= $_POST['titre'] ?? $JalQart->titre ?>" required class="admin-update-input">
-            </label>
-            <label class="admin-update-label">
-                Sous-titre
-                <input type="text" name="sous_titre" value="<?= $_POST['sous_titre'] ?? $JalQart->sous_titre ?>" required class="admin-update-input">
-            </label>
-            <label class="admin-update-label">
-                Description
-                <textarea type="text" name="description" required class="admin-update-description"><?= $_POST['description'] ?? $JalQart->description ?></textarea>
-            </label>
-
-            <!-- Protection CSRF -->
-            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
-
-            <div class="admin-update-buttons">
-                <button type="reset" class="admin-update-annuler">Annuler</button>
-                <button type="submit" class="admin-update-confirmer">Confirmer</button>
-            </div>
-        </form>
-        <div class="validation-message">
-            <?php foreach($errors as $info) :?>
-                <p><?= $info ? "---> " . $info . " <---" : "" ?></p>
             <?php endforeach ?>
         </div>
     </div>
