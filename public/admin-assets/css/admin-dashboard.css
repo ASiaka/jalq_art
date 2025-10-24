@@ -29,10 +29,13 @@
 }
 .admin-realisations-content {
     width: 80%;
+    /* height: auto; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* overflow-y: scroll;
+    scrollbar-width: thin; */
 }
 .admin-realisation-content {
     width: 100%;

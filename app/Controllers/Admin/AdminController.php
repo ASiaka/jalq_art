@@ -15,10 +15,11 @@ class AdminController {
         $this->show($arrayMatch['target']['method'], $arrayInfos);
     }
     public function update($arrayMatch) {
-        $JalQartInfos = JalQart::findAll();
-
         // Nécessaire pour lire le token CSRF
         session_start();
+
+        global $router;
+        $JalQartInfos = JalQart::findAll();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id'] ?? '');
@@ -28,7 +29,6 @@ class AdminController {
             $csrf_token = $_POST['csrf_token'] ?? '';
 
 
-            global $router;
             $errors = [];
 
             // Vérification du token CSRF
@@ -81,6 +81,8 @@ class AdminController {
         // Nécessaire pour lire le token CSRF
         session_start();
 
+        global $router;
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $titre = trim($_POST['titre'] ?? '');
             $sous_titre = trim($_POST['sous_titre'] ?? '');
@@ -88,7 +90,6 @@ class AdminController {
             $csrf_token = $_POST['csrf_token'] ?? '';
 
 
-            global $router;
             $errors = [];
 
             // Vérification du token CSRF
@@ -134,11 +135,59 @@ class AdminController {
     }
     
     public function delete($arrayMatch) {
-        $this->show($arrayMatch['target']['method']);
+        // Nécessaire pour lire le token CSRF
+        session_start();
+        
+        global $router;
+        $JalQartInfos = JalQart::findAll();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // On enlève csrf_token du tableau
+            $postId = array_filter($_POST, function($key) {
+                    return $key !== 'csrf_token';
+            }, ARRAY_FILTER_USE_KEY);
+
+            $errors = [];
+            $Ids = [];
+
+            // $id = trim($_POST['id'] ?? "");
+            $csrf_token = $_POST['csrf_token'] ?? '';
+            // Vérification du token CSRF
+            if (
+                empty($_SESSION['csrf_token']) ||
+                empty($csrf_token) ||
+                !hash_equals($_SESSION['csrf_token'], $csrf_token)
+            ) {
+                $errors[] = "Erreur de sécurité : requête invalide (CSRF).";
+            }
+
+            foreach($postId as $key => $id) {
+                if (empty($id) || !ctype_digit($id)) {
+                    $errors[] = "L'id $id est invalide.";
+                } else {
+                    $Ids[] = trim($id);
+                }
+            }
+
+            if (!$errors && !empty($Ids)) {
+                // On peut supprimer le token après usage (sécurité)
+                unset($_SESSION['csrf_token']);
+
+                $JalQartUpdate = new JalQart();
+                
+                foreach($Ids as $id) {
+                    $JalQartUpdate->delete((int)$id);
+                }
+
+                header('Location: ' . $router->generate('dashboard'));
+                exit;
+            } else {
+                $this->show($arrayMatch['target']['method'], ['JalQartInfos' => $JalQartInfos, 'errors' => $errors]);
+            }
+        } else {
+            $this->show($arrayMatch['target']['method'], ['JalQartInfos' => $JalQartInfos, 'errors' => []]);
+        }
     }
-    // public function erreur() {
-    //     $this->show("404");
-    // }
 
     private function show($page, $arrayInfos = [], $id = null) {
         global $router;

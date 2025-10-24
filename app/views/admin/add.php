@@ -33,7 +33,7 @@
                 <button type="submit" class="admin-add-confirmer">Confirmer</button>
             </div>
         </form>
-        <div class="add-message">
+        <div class="validation-message">
             <?php foreach($arrayInfos as $info) :?>
                 <p><?= $info ? "---> " . $info . " <---" : "" ?></p>
             <?php endforeach ?>
