@@ -45,10 +45,10 @@ class JalQart extends CoreModel {
         $sql = 'UPDATE `jalqart` SET titre = :titre, sous_titre = :sous_titre, description = :description WHERE id = :id';
         $pdoStatement = $databaseConnection->prepare($sql);
         $pdoStatement->execute([
-            ':id' => 10,
-            ':titre' => 'test1',
-            ':sous_titre' => 'le test1',
-            ':description' => 'test1 description',
+            ':id' => $this->id,
+            ':titre' => $this->titre,
+            ':sous_titre' => $this->sous_titre,
+            ':description' => $this->description,
         ]);
     }
     
