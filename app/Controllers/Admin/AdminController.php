@@ -1,17 +1,70 @@
 <?php
 
 namespace JalQart\Controllers\Admin;
+use JalQart\Models\AppUser;
 use JalQart\Models\IlesInfos;
 use JalQart\Models\JalQart;
 
 class AdminController {
-    
+    public function __construct() {
+        // Démarrage de session global
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+    }
+
     public function login($arrayMatch) {
-        $this->show($arrayMatch['target']['method']);
+        global $router;
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $username = $_POST['username'] ?? '';
+            $password = $_POST['password'] ?? '';
+            $csrf = $_POST['csrf_token'] ?? '';
+
+            // Vérification du CSRF token
+            if (empty($csrf) || !hash_equals($_SESSION['csrf_token'] ?? '', $csrf)) {
+                $_SESSION['flash_error'] = "La session a expiré. Merci de réessayer.";
+                header('Location: ' . $router->generate('user-login'));
+                exit;
+            }
+            
+            $errors = [];
+            $user = AppUser::find($username ?? '');
+            
+
+            if ($user && password_verify($password, $user->getPassword())) {
+                // Régénéreration de l’ID de session : pour éviter les attaques de fixation de session.
+                session_regenerate_id(true);
+                // On peut supprimer le token après usage (sécurité)
+                unset($_SESSION['csrf_token']);
+
+                $_SESSION['userId'] = $user->getId();
+                $_SESSION['userObject'] = $user;
+
+                header('Location: ' . $router->generate('dashboard'));
+                exit;
+            } else {
+                $errors[] = "Nom d'utilisateur ou mot de passe incorrect.";
+                $this->show($arrayMatch['target']['method'], $errors);
+            }
+        } else {
+            $this->show($arrayMatch['target']['method']);
+        }
+    }
+    public function logout()
+    {
+        global $router;
+
+        unset(
+            $_SESSION['userId'],
+            $_SESSION['userObject'],
+        );
+
+        header('Location: ' . $router->generate('user-login'));
     }
     public function dashboard($arrayMatch) {
         $arrayInfos = JalQart::findAll();
-        
+
         $this->show($arrayMatch['target']['method'], $arrayInfos);
     }
     public function update($arrayMatch) {
@@ -21,7 +74,7 @@ class AdminController {
     }
     public function updateId($arrayMatch) {
         // Nécessaire pour lire le token CSRF
-        session_start();
+        // session_start();
 
         global $router;
         $JalQartInfos = JalQart::findAll();
@@ -81,10 +134,9 @@ class AdminController {
             $this->show($arrayMatch['target']['method'], ['JalQartInfos' => $JalQartInfos, 'errors' => []], $arrayMatch['params']['id']);
         }
     }
-
     public function add($arrayMatch) {
         // Nécessaire pour lire le token CSRF
-        session_start();
+        // session_start();
 
         global $router;
 
@@ -137,11 +189,10 @@ class AdminController {
         } else {
             $this->show($arrayMatch['target']['method']);
         }
-    }
-    
+    }   
     public function delete($arrayMatch) {
         // Nécessaire pour lire le token CSRF
-        session_start();
+        // session_start();
         
         global $router;
         $JalQartInfos = JalQart::findAll();

@@ -1,4 +1,7 @@
 <?php
+// Nécessaire pour lire le token CSRF
+session_start();
+
 // Chargement des dépendances via autoload.php de composer
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -47,12 +50,30 @@ $router->addRoutes(array(
   //ROUTES ADMIN
   array(
     'GET',
-    '/admin/login',
+    '/user/login',
     [
       'method' => 'login',
       'controller' => 'JalQart\Controllers\Admin\AdminController',
     ],
-    'login'
+    'user-login'
+  ),
+  array(
+    'POST',
+    '/user/login',
+    [
+      'method' => 'login',
+      'controller' => 'JalQart\Controllers\Admin\AdminController',
+    ],
+    'user-login-post'
+  ),
+  array(
+    'GET',
+    '/user/logout',
+    [
+        'method' => 'logout',
+        'controller' => 'JalQart\Controllers\Admin\AdminController'
+    ],
+    'user-logout'
   ),
   array(
     'GET',

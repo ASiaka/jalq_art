@@ -1,3 +1,9 @@
+<?php
+    if (!isset($_SESSION['userId'])) {
+        header('Location: ' . $router->generate('user-login'));
+        exit;
+    }
+?>
 <main class="dashboard">
     <?php 
         require_once __DIR__ . "/includes/nav.php";

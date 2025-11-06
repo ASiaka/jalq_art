@@ -26,8 +26,8 @@
             </a>
         </li>
     </ul>
-    <button class="logout-button">
+    <a href="<?= $router->generate('user-logout') ?>" class="logout-button">
         <i class="fa-solid fa-right-from-bracket"></i>
         Log out
-    </button>
+    </a>
 </nav>
